@@ -8,6 +8,8 @@ var AppContainer = React.createClass({
       null,
       React.createElement(Navbar, null),
       React.createElement(Carousel, null),
+      React.createElement(HomePage, null),
+      React.createElement(AboutPage, null),
       React.createElement(Footer, null)
     );
   }
@@ -131,6 +133,53 @@ var Carousel = React.createClass({
   }
 });
 
+// Home Page Component 
+var HomePage = React.createClass({
+  displayName: "HomePage",
+  render: function render() {
+    return React.createElement(
+      "div",
+      { className: "home-content container" },
+      React.createElement(
+        "h2",
+        null,
+        "Home"
+      ),
+      React.createElement(
+        "p",
+        null,
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Eget est lorem ipsum dolor sit amet consectetur adipiscing elit. Quis hendrerit dolor magna eget est. Elementum tempus egestas sed sed risus pretium quam vulputate dignissim. Fames ac turpis egestas integer eget. Cursus risus at ultrices mi tempus imperdiet nulla malesuada pellentesque. Ut lectus arcu bibendum at varius vel pharetra vel turpis. Aliquam sem et tortor consequat id porta. In eu mi bibendum neque egestas congue quisque. Neque aliquam vestibulum morbi blandit cursus risus at. Integer eget aliquet nibh praesent tristique magna. Fermentum iaculis eu non diam phasellus vestibulum. Tristique risus nec feugiat in fermentum."
+      ),
+      React.createElement(
+        "p",
+        null,
+        "At erat pellentesque adipiscing commodo. Integer feugiat scelerisque varius morbi enim nunc faucibus. Felis bibendum ut tristique et egestas. Pharetra sit amet aliquam id diam maecenas ultricies mi eget. Nisi lacus sed viverra tellus in. Et netus et malesuada fames. Tellus in metus vulputate eu scelerisque felis imperdiet proin fermentum. Pellentesque adipiscing commodo elit at imperdiet dui accumsan sit. Justo nec ultrices dui sapien eget mi proin sed. Bibendum est ultricies integer quis auctor elit sed vulputate. Gravida rutrum quisque non tellus orci ac auctor. Proin nibh nisl condimentum id venenatis. Ultrices eros in cursus turpis massa tincidunt dui ut ornare. Odio tempor orci dapibus ultrices in iaculis nunc sed augue. Fringilla urna porttitor rhoncus dolor. Enim lobortis scelerisque fermentum dui faucibus in ornare. Ultrices in iaculis nunc sed augue lacus. Morbi quis commodo odio aenean sed. Hendrerit dolor magna eget est lorem ipsum dolor sit. Sed lectus vestibulum mattis ullamcorper."
+      )
+    );
+  }
+});
+
+// About Page Component
+var AboutPage = React.createClass({
+  displayName: "AboutPage",
+  render: function render() {
+    return React.createElement(
+      "div",
+      { className: "about-content container" },
+      React.createElement(
+        "h2",
+        null,
+        "About"
+      ),
+      React.createElement(
+        "p",
+        null,
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Eget est lorem ipsum dolor sit amet consectetur adipiscing elit. Quis hendrerit dolor magna eget est. Elementum tempus egestas sed sed risus pretium quam vulputate dignissim. Fames ac turpis egestas integer eget. Cursus risus at ultrices mi tempus imperdiet nulla malesuada pellentesque. Ut lectus arcu bibendum at varius vel pharetra vel turpis. Aliquam sem et tortor consequat id porta. In eu mi bibendum neque egestas congue quisque. Neque aliquam vestibulum morbi blandit cursus risus at. Integer eget aliquet nibh praesent tristique magna. Fermentum iaculis eu non diam phasellus vestibulum. Tristique risus nec feugiat in fermentum."
+      )
+    );
+  }
+});
+
 // Footer Component (Bootstrap Sticky Footer)
 var Footer = React.createClass({
   displayName: "Footer",
@@ -145,7 +194,7 @@ var Footer = React.createClass({
       { className: "footer mt-auto py-3" },
       React.createElement(
         "div",
-        { className: "container" },
+        { className: "container-fluid" },
         React.createElement(
           "span",
           { className: "text-muted" },

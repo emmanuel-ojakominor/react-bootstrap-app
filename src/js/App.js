@@ -6,6 +6,8 @@ const AppContainer = React.createClass({
       <div>
         <Navbar />
         <Carousel />
+        <HomePage />
+        <AboutPage />
         <Footer />
       </div>
     );
@@ -38,7 +40,7 @@ const Navbar = React.createClass({
         </nav>
       </div>
     )
-  },  
+  },
   propTypes: {
     navbarBrand: React.PropTypes.string.isRequired
   }
@@ -87,6 +89,41 @@ const Carousel = React.createClass({
 });
 
 
+// Home Page Component 
+const HomePage = React.createClass({
+  render() {
+    return (
+      <div className="home-content container">
+        <h2>Home</h2>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Eget est lorem ipsum dolor sit amet consectetur adipiscing elit. Quis hendrerit dolor magna eget est. Elementum tempus egestas sed sed risus pretium quam vulputate dignissim. Fames ac turpis egestas integer eget. Cursus risus at ultrices mi tempus imperdiet nulla malesuada pellentesque. Ut lectus arcu bibendum at varius vel pharetra vel turpis. Aliquam sem et tortor consequat id porta. In eu mi bibendum neque egestas congue quisque. Neque aliquam vestibulum morbi blandit cursus risus at. Integer eget aliquet nibh praesent tristique magna. Fermentum iaculis eu non diam phasellus vestibulum. Tristique risus nec feugiat in fermentum.
+          </p>
+
+        <p>
+          At erat pellentesque adipiscing commodo. Integer feugiat scelerisque varius morbi enim nunc faucibus. Felis bibendum ut tristique et egestas. Pharetra sit amet aliquam id diam maecenas ultricies mi eget. Nisi lacus sed viverra tellus in. Et netus et malesuada fames. Tellus in metus vulputate eu scelerisque felis imperdiet proin fermentum. Pellentesque adipiscing commodo elit at imperdiet dui accumsan sit. Justo nec ultrices dui sapien eget mi proin sed. Bibendum est ultricies integer quis auctor elit sed vulputate. Gravida rutrum quisque non tellus orci ac auctor. Proin nibh nisl condimentum id venenatis. Ultrices eros in cursus turpis massa tincidunt dui ut ornare. Odio tempor orci dapibus ultrices in iaculis nunc sed augue. Fringilla urna porttitor rhoncus dolor. Enim lobortis scelerisque fermentum dui faucibus in ornare. Ultrices in iaculis nunc sed augue lacus. Morbi quis commodo odio aenean sed. Hendrerit dolor magna eget est lorem ipsum dolor sit. Sed lectus vestibulum mattis ullamcorper.
+          </p>
+      </div>
+    )
+  }
+});
+
+
+// About Page Component
+const AboutPage = React.createClass({
+  render() {
+    return (
+      <div className="about-content container">
+        <h2>About</h2>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Eget est lorem ipsum dolor sit amet consectetur adipiscing elit. Quis hendrerit dolor magna eget est. Elementum tempus egestas sed sed risus pretium quam vulputate dignissim. Fames ac turpis egestas integer eget. Cursus risus at ultrices mi tempus imperdiet nulla malesuada pellentesque. Ut lectus arcu bibendum at varius vel pharetra vel turpis. Aliquam sem et tortor consequat id porta. In eu mi bibendum neque egestas congue quisque. Neque aliquam vestibulum morbi blandit cursus risus at. Integer eget aliquet nibh praesent tristique magna. Fermentum iaculis eu non diam phasellus vestibulum. Tristique risus nec feugiat in fermentum.
+          </p>
+
+      </div>
+    )
+  }
+});
+
+
 // Footer Component (Bootstrap Sticky Footer)
 const Footer = React.createClass({
   getDefaultProps() {
@@ -97,7 +134,7 @@ const Footer = React.createClass({
   render() {
     return (
       <footer className="footer mt-auto py-3">
-        <div className="container">
+        <div className="container-fluid">
           <span className="text-muted">&copy; Emmanuel Ojakominor, {this.props.copyrightYearRange} </span>
         </div>
       </footer>
