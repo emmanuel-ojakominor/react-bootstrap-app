@@ -6,9 +6,8 @@ This project was not bootstrapped with `create-react-app`. This is because this 
  
 ## This React web project makes use of:
 1. Core concepts of React (components, props, state, JSX, events, etc.)
-2. React Router
-3. Twitter Bootstrap
-4. babel-cli/babel-preset-react-app
+2. Twitter Bootstrap
+3. babel-cli/babel-preset-react-app
 4. JSX Preprocessor
 5. lite-server (to start and auto refresh web browser, since this project isn't using 'react-scripts' that comes with `create-react-app`)
 

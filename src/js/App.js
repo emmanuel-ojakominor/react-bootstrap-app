@@ -1,13 +1,28 @@
 
-// Main App Component
+// App Container Component
 const AppContainer = React.createClass({
-  render() {
+  getInitialState() {
+    return {
+      page: 'home'
+    }
+  },
+  render() {    
+    if (this.state.page == 'home') {
+      currentPage = <HomePage />
+    }
+    else if (this.state.page == 'about') {
+      currentPage = <AboutPage />
+    }
+
     return (
       <div>
-        <Navbar />
-        <Carousel />
-        <HomePage />
-        <AboutPage />
+        <Navbar
+          page={this.state.page}
+          homeClick={() => this.setState({page: 'home'})}
+          aboutClick={() => this.setState({page: 'about'})}
+        />
+        {this.state.page == 'home' ? <Carousel /> : ''}
+        {currentPage}
         <Footer />
       </div>
     );
@@ -29,11 +44,11 @@ const Navbar = React.createClass({
           <a className="navbar-brand" href="#">{this.props.navbarBrand}</a>
           <div className="collapse navbar-collapse" id="navbarsExampleDefault">
             <ul className="navbar-nav mr-auto">
-              <li className="nav-item active">
-                <a className="nav-link" href="#">Home</a>
+              <li className={this.props.page == 'home' ? 'active nav-item' : ''}>
+                <a onClick={this.props.homeClick} className="nav-link" href="#">Home</a>
               </li>
-              <li className="nav-item">
-                <a className="nav-link" href="#">About</a>
+              <li className={this.props.page == 'about' ? 'active nav-item' : ''}>
+                <a onClick={this.props.aboutClick} className="nav-link" href="#">About</a>
               </li>
             </ul>
           </div>
@@ -93,7 +108,7 @@ const Carousel = React.createClass({
 const HomePage = React.createClass({
   render() {
     return (
-      <div className="home-content container">
+      <div className="home page container">
         <h2>Home</h2>
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Eget est lorem ipsum dolor sit amet consectetur adipiscing elit. Quis hendrerit dolor magna eget est. Elementum tempus egestas sed sed risus pretium quam vulputate dignissim. Fames ac turpis egestas integer eget. Cursus risus at ultrices mi tempus imperdiet nulla malesuada pellentesque. Ut lectus arcu bibendum at varius vel pharetra vel turpis. Aliquam sem et tortor consequat id porta. In eu mi bibendum neque egestas congue quisque. Neque aliquam vestibulum morbi blandit cursus risus at. Integer eget aliquet nibh praesent tristique magna. Fermentum iaculis eu non diam phasellus vestibulum. Tristique risus nec feugiat in fermentum.
@@ -112,12 +127,11 @@ const HomePage = React.createClass({
 const AboutPage = React.createClass({
   render() {
     return (
-      <div className="about-content container">
-        <h2>About</h2>
+      <div className="about page container">
+        <h2>About Us</h2>
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Eget est lorem ipsum dolor sit amet consectetur adipiscing elit. Quis hendrerit dolor magna eget est. Elementum tempus egestas sed sed risus pretium quam vulputate dignissim. Fames ac turpis egestas integer eget. Cursus risus at ultrices mi tempus imperdiet nulla malesuada pellentesque. Ut lectus arcu bibendum at varius vel pharetra vel turpis. Aliquam sem et tortor consequat id porta. In eu mi bibendum neque egestas congue quisque. Neque aliquam vestibulum morbi blandit cursus risus at. Integer eget aliquet nibh praesent tristique magna. Fermentum iaculis eu non diam phasellus vestibulum. Tristique risus nec feugiat in fermentum.
           </p>
-
       </div>
     )
   }
@@ -133,11 +147,12 @@ const Footer = React.createClass({
   },
   render() {
     return (
-      <footer className="footer mt-auto py-3">
+      <footer className="footer">
         <div className="container-fluid">
-          <span className="text-muted">&copy; Emmanuel Ojakominor, {this.props.copyrightYearRange} </span>
+          <p className="text-muted">&copy; Emmanuel Ojakominor, {this.props.copyrightYearRange} </p>
         </div>
       </footer>
+
     )
   },
   propTypes: {
