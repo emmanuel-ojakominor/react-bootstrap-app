@@ -2,7 +2,7 @@
  
 This project is an example of how ReactJS may be used in combination with Bootstrap. 
 
-This project was not bootstrap with `create-react-app`. This is because this application isn't all that massive, and thus, doesn't require including so many additional files that come with `create-react-app`. Instead, React and ReactDOM files were added to the project via `<script>` tags. 
+This project was not bootstrapped with `create-react-app`. This is because this application isn't all that massive, and thus, doesn't require including so many additional files that come with `create-react-app`. Instead, React and ReactDOM files were added to the project via `<script>` tags. 
  
 ## This React web project makes use of:
 1. Core concepts of React (components, props, state, JSX, events, etc.)
