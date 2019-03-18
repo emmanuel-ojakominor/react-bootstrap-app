@@ -15,11 +15,16 @@ const AppContainer = React.createClass({
 
 // Navbar Component
 const Navbar = React.createClass({
+  getDefaultProps() {
+    return {
+      navbarBrand: "ReactBootstrap"
+    }
+  },
   render() {
     return (
       <div>
         <nav className="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-          <a className="navbar-brand" href="#">ReactBootstrap</a>
+          <a className="navbar-brand" href="#">{this.props.navbarBrand}</a>
           <div className="collapse navbar-collapse" id="navbarsExampleDefault">
             <ul className="navbar-nav mr-auto">
               <li className="nav-item active">
@@ -33,24 +38,34 @@ const Navbar = React.createClass({
         </nav>
       </div>
     )
+  },  
+  propTypes: {
+    navbarBrand: React.PropTypes.string.isRequired
   }
 });
 
 
 // Carousel Component
 const Carousel = React.createClass({
+  getDefaultProps() {
+    return {
+      img1: "../../public/assets/img/img1.png",
+      img2: "../../public/assets/img/img2.png",
+      img3: "../../public/assets/img/img3.png"
+    }
+  },
   render() {
     return (
       <div id="carousel" className="carousel slide" data-ride="carousel">
         <div className="carousel-inner">
           <div className="carousel-item active">
-            <img src="../../public/assets/img/img1.png" className="d-block w-100" alt="..." />
+            <img src={this.props.img1} className="d-block w-100" />
           </div>
           <div className="carousel-item">
-            <img src="../../public/assets/img/img2.png" className="d-block w-100" alt="..." />
+            <img src={this.props.img2} className="d-block w-100" />
           </div>
           <div className="carousel-item">
-            <img src="../../public/assets/img/img3.png" className="d-block w-100" alt="..." />
+            <img src={this.props.img3} className="d-block w-100" />
           </div>
         </div>
         <a className="carousel-control-prev" href="#carousel" role="button" data-slide="prev">
@@ -63,20 +78,33 @@ const Carousel = React.createClass({
         </a>
       </div>
     )
+  },
+  propTypes: {
+    img1: React.PropTypes.string.isRequired,
+    img2: React.PropTypes.string.isRequired,
+    img3: React.PropTypes.string.isRequired
   }
 });
 
 
 // Footer Component (Bootstrap Sticky Footer)
 const Footer = React.createClass({
+  getDefaultProps() {
+    return {
+      copyrightYearRange: "1998-2019",
+    }
+  },
   render() {
     return (
       <footer className="footer mt-auto py-3">
         <div className="container">
-          <span className="text-muted">&copy; Emmanuel Ojakominor 2019</span>
+          <span className="text-muted">&copy; Emmanuel Ojakominor, {this.props.copyrightYearRange} </span>
         </div>
       </footer>
     )
+  },
+  propTypes: {
+    copyrightYearRange: React.PropTypes.string.isRequired
   }
 });
 

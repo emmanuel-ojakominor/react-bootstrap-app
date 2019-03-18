@@ -16,6 +16,11 @@ var AppContainer = React.createClass({
 // Navbar Component
 var Navbar = React.createClass({
   displayName: "Navbar",
+  getDefaultProps: function getDefaultProps() {
+    return {
+      navbarBrand: "ReactBootstrap"
+    };
+  },
   render: function render() {
     return React.createElement(
       "div",
@@ -26,7 +31,7 @@ var Navbar = React.createClass({
         React.createElement(
           "a",
           { className: "navbar-brand", href: "#" },
-          "ReactBootstrap"
+          this.props.navbarBrand
         ),
         React.createElement(
           "div",
@@ -56,12 +61,23 @@ var Navbar = React.createClass({
         )
       )
     );
+  },
+
+  propTypes: {
+    navbarBrand: React.PropTypes.string.isRequired
   }
 });
 
 // Carousel Component
 var Carousel = React.createClass({
   displayName: "Carousel",
+  getDefaultProps: function getDefaultProps() {
+    return {
+      img1: "../../public/assets/img/img1.png",
+      img2: "../../public/assets/img/img2.png",
+      img3: "../../public/assets/img/img3.png"
+    };
+  },
   render: function render() {
     return React.createElement(
       "div",
@@ -72,17 +88,17 @@ var Carousel = React.createClass({
         React.createElement(
           "div",
           { className: "carousel-item active" },
-          React.createElement("img", { src: "../../public/assets/img/img1.png", className: "d-block w-100", alt: "..." })
+          React.createElement("img", { src: this.props.img1, className: "d-block w-100" })
         ),
         React.createElement(
           "div",
           { className: "carousel-item" },
-          React.createElement("img", { src: "../../public/assets/img/img2.png", className: "d-block w-100", alt: "..." })
+          React.createElement("img", { src: this.props.img2, className: "d-block w-100" })
         ),
         React.createElement(
           "div",
           { className: "carousel-item" },
-          React.createElement("img", { src: "../../public/assets/img/img3.png", className: "d-block w-100", alt: "..." })
+          React.createElement("img", { src: this.props.img3, className: "d-block w-100" })
         )
       ),
       React.createElement(
@@ -106,12 +122,23 @@ var Carousel = React.createClass({
         )
       )
     );
+  },
+
+  propTypes: {
+    img1: React.PropTypes.string.isRequired,
+    img2: React.PropTypes.string.isRequired,
+    img3: React.PropTypes.string.isRequired
   }
 });
 
 // Footer Component (Bootstrap Sticky Footer)
 var Footer = React.createClass({
   displayName: "Footer",
+  getDefaultProps: function getDefaultProps() {
+    return {
+      copyrightYearRange: "1998-2019"
+    };
+  },
   render: function render() {
     return React.createElement(
       "footer",
@@ -122,10 +149,16 @@ var Footer = React.createClass({
         React.createElement(
           "span",
           { className: "text-muted" },
-          "\xA9 Emmanuel Ojakominor 2019"
+          "\xA9 Emmanuel Ojakominor, ",
+          this.props.copyrightYearRange,
+          " "
         )
       )
     );
+  },
+
+  propTypes: {
+    copyrightYearRange: React.PropTypes.string.isRequired
   }
 });
 
