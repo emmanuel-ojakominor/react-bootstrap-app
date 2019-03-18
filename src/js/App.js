@@ -3,10 +3,14 @@
 const AppContainer = React.createClass({
   render() {
     return (
-      <Navbar />
+      <div>
+        <Navbar />
+        <Carousel />
+      </div>
     );
   }
 });
+
 
 // Navbar Component
 const Navbar = React.createClass({
@@ -26,6 +30,36 @@ const Navbar = React.createClass({
             </ul>
           </div>
         </nav>
+      </div>
+    )
+  }
+});
+
+
+// Carousel Component
+const Carousel = React.createClass({
+  render() {
+    return (
+      <div id="carousel" className="carousel slide" data-ride="carousel">
+        <div className="carousel-inner">
+          <div className="carousel-item active">
+            <img src="../../public/assets/img/img1.png" className="d-block w-100" alt="..." />
+          </div>
+          <div className="carousel-item">
+            <img src="../../public/assets/img/img2.png" className="d-block w-100" alt="..." />
+          </div>
+          <div className="carousel-item">
+            <img src="../../public/assets/img/img3.png" className="d-block w-100" alt="..." />
+          </div>
+        </div>
+        <a className="carousel-control-prev" href="#carousel" role="button" data-slide="prev">
+          <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span className="sr-only">Previous</span>
+        </a>
+        <a className="carousel-control-next" href="#carousel" role="button" data-slide="next">
+          <span className="carousel-control-next-icon" aria-hidden="true"></span>
+          <span className="sr-only">Next</span>
+        </a>
       </div>
     )
   }
