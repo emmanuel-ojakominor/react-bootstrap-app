@@ -6,6 +6,7 @@ const AppContainer = React.createClass({
       <div>
         <Navbar />
         <Carousel />
+        <Footer />
       </div>
     );
   }
@@ -61,6 +62,20 @@ const Carousel = React.createClass({
           <span className="sr-only">Next</span>
         </a>
       </div>
+    )
+  }
+});
+
+
+// Footer Component (Bootstrap Sticky Footer)
+const Footer = React.createClass({
+  render() {
+    return (
+      <footer className="footer mt-auto py-3">
+        <div className="container">
+          <span className="text-muted">&copy; Emmanuel Ojakominor 2019</span>
+        </div>
+      </footer>
     )
   }
 });

@@ -7,7 +7,8 @@ var AppContainer = React.createClass({
       "div",
       null,
       React.createElement(Navbar, null),
-      React.createElement(Carousel, null)
+      React.createElement(Carousel, null),
+      React.createElement(Footer, null)
     );
   }
 });
@@ -102,6 +103,26 @@ var Carousel = React.createClass({
           "span",
           { className: "sr-only" },
           "Next"
+        )
+      )
+    );
+  }
+});
+
+// Footer Component (Bootstrap Sticky Footer)
+var Footer = React.createClass({
+  displayName: "Footer",
+  render: function render() {
+    return React.createElement(
+      "footer",
+      { className: "footer mt-auto py-3" },
+      React.createElement(
+        "div",
+        { className: "container" },
+        React.createElement(
+          "span",
+          { className: "text-muted" },
+          "\xA9 Emmanuel Ojakominor 2019"
         )
       )
     );
